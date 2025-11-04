@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61", "setuptools_scm[toml]>=8"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "odin_gpio"
+version = "0.1.0"
+description = "GPIO Adapter"
+authors = [
+    { name="William Brown", email="william.brown@stfc.ac.uk" }
+]
+requires-python = ">=3.8"
+dependencies = [
+    "odin_control @ git+https://git@github.com/odin-detector/odin-control.git",
+    "tornado>=4.3",
+    "future"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
