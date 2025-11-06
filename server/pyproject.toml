@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=66", "setuptools_scm[toml]>=8"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pico_comms"
+version = "0.1.0"
+description = "PicoScope Communication"
+authors = [
+    { name="William Brown", email="william.brown@stfc.ac.uk" }
+]
+requires-python = ">=3.8"
+dependencies = [
+    "odin_control @ git+https://git@github.com/odin-detector/odin-control.git",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
