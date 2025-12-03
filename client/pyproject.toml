@@ -3,9 +3,9 @@ requires = ["setuptools>=61", "setuptools_scm[toml]>=8"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "odin_gpio"
+name = "odin_gpio_client"
 version = "0.1.0"
-description = "GPIO Adapter"
+description = "Client for GPIO to communicate."
 authors = [
     { name="William Brown", email="william.brown@stfc.ac.uk" }
 ]

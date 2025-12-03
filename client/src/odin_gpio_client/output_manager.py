@@ -33,4 +33,4 @@ class outputManager():
     def line_pulse(self):
         time.sleep(0.1)
         self.request.set_value(self.LINE_OFFSET, self.toggle_value(self.active))
-      
+

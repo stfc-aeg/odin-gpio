@@ -1,12 +1,12 @@
 import logging
 
 from odin.adapters.adapter import ApiAdapter, ApiAdapterResponse
-from gpiod_wb.controller import GpiodController
+from odin_gpio_client.controller import ClientController
 from odin.adapters.parameter_tree import ParameterTreeError
 
-class GpiodAdapter(ApiAdapter):
+class ClientAdapter(ApiAdapter):
     def __init__(self, **kwargs):
-        super(GpiodAdapter, self).__init__(**kwargs)
+        super(ClientAdapter, self).__init__(**kwargs)
 
         output_chip_path = str(self.options.get('output_chip_path', '1'))
         output_line_offset = int(self.options.get('output_line_offset', 4))
@@ -14,7 +14,7 @@ class GpiodAdapter(ApiAdapter):
         input_chip_path = str(self.options.get('input_chip_path', '0'))
         input_line_offset = int(self.options.get('input_line_offset', 12))
 
-        self.controller = GpiodController(output_chip_path, output_line_offset, input_chip_path, input_line_offset)
+        self.controller = ClientController(output_chip_path, output_line_offset, input_chip_path, input_line_offset)
         logging.debug("Adapter Loaded")
 
     def get(self, path, request):

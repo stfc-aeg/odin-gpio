@@ -2,12 +2,12 @@ import json
 import random
 import zmq
 
-from gpiod_wb.input_manager import inputManager
-from gpiod_wb.output_manager import outputManager
+from odin_gpio_client.input_manager import inputManager
+from odin_gpio_client.output_manager import outputManager
 from odin.adapters.parameter_tree import ParameterTree
 from zmq.eventloop.zmqstream import ZMQStream
 
-class GpiodController:
+class ClientController:
 
     def __init__(self, output_chip_path, output_line_offset, input_chip_path, input_line_offset):
         self.output_manager = outputManager(output_chip_path, output_line_offset)
@@ -17,7 +17,7 @@ class GpiodController:
             'active': (True, None)
         })
 
-        self.ctrl_endpoint = f"tcp://192.168.0.13:5555"
+        self.ctrl_endpoint = f"tcp://192.168.0.58:5555"
 
         self.ctx = zmq.Context()
         self.ctrl_socket = self.ctx.socket(zmq.DEALER)
