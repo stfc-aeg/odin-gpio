@@ -3,9 +3,9 @@ requires = ["setuptools>=66", "setuptools_scm[toml]>=8"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "pico_comms"
+name = "trigger-adapter"
 version = "0.1.0"
-description = "PicoScope Communication"
+description = "Triggering Adapter for GPIO"
 authors = [
     { name="William Brown", email="william.brown@stfc.ac.uk" }
 ]
