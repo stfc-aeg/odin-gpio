@@ -2,7 +2,7 @@ import logging
 
 from odin.adapters.adapter import ApiAdapter, ApiAdapterResponse
 from odin.adapters.parameter_tree import ParameterTreeError
-from trigger_adapter.controller import TriggerController, TriggerControllerError
+from odin_gpio_server.controller import TriggerController, TriggerControllerError
 from tornado.escape import json_decode
 
 class TriggerAdapter(ApiAdapter):
