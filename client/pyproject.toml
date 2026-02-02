@@ -3,9 +3,8 @@ requires = ["setuptools>=61", "setuptools_scm[toml]>=8"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "odin_gpio_client"
-version = "0.1.0"
-description = "Client for GPIO to communicate."
+name = "odin-gpio-client"
+description = "Client adapter for BeagleBoneBlack GPIO."
 authors = [
     { name="William Brown", email="william.brown@stfc.ac.uk" }
 ]
@@ -19,3 +18,8 @@ dependencies = [
 [tool.setuptools.packages.find]
 where = ["src"]
 
+[tool.setuptools_scm]
+# Optional settings for setuptools_scm
+write_to = "src/odin_pico/_version.py"
+version_scheme = "no-guess-dev"
+local_scheme = "node-and-date"

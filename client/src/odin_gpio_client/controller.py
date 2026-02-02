@@ -36,13 +36,5 @@ class ClientController:
         self.input_manager.active = False
 
     def do_req(self, rises):
-        # 6.1/6.2 secs
-        # self.ctrl_stream.send_string("Trigger!")
-
-        # 6.2/6.3 secs
-        # message = json.dumps({'times_risen': rises}).encode('utf-8')
-        # self.ctrl_stream.send(message)  # Send as raw bytes
-
-        # 6.2/6.3 secs
         message = json.dumps({'times_risen': rises})
         self.ctrl_stream.send_string(message)
