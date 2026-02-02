@@ -3,16 +3,21 @@ requires = ["setuptools>=66", "setuptools_scm[toml]>=8"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "trigger-adapter"
-version = "0.1.0"
-description = "Triggering Adapter for GPIO"
+name = "odin-gpio-server"
+description = "Server Adapter for BeagleBoneBlack GPIO"
 authors = [
-    { name="William Brown", email="william.brown@stfc.ac.uk" }
+    { name="Will Brown", email="william.brown@stfc.ac.uk" }
 ]
 requires-python = ">=3.8"
 dependencies = [
-    "odin_control @ git+https://git@github.com/odin-detector/odin-control.git",
+    "odin_control @ git+https://git@github.com/odin-detector/odin-control@1.5.0#egg=odin-control",
 ]
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools_scm]
+# Optional settings for setuptools_scm
+write_to = "src/odin_pico/_version.py"
+version_scheme = "no-guess-dev"
+local_scheme = "node-and-date"
