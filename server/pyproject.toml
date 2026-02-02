@@ -8,9 +8,10 @@ description = "Server Adapter for BeagleBoneBlack GPIO"
 authors = [
     { name="Will Brown", email="william.brown@stfc.ac.uk" }
 ]
+dynamic = ["version"]
 requires-python = ">=3.8"
 dependencies = [
-    "odin_control @ git+https://git@github.com/odin-detector/odin-control@1.5.0#egg=odin-control",
+    "odin_control @ git+https://git@github.com/odin-detector/odin-control@1.6.0#egg=odin-control",
 ]
 
 [tool.setuptools.packages.find]
@@ -18,6 +19,6 @@ where = ["src"]
 
 [tool.setuptools_scm]
 # Optional settings for setuptools_scm
-write_to = "src/odin_pico/_version.py"
+write_to = "src/odin_gpio_server/_version.py"
 version_scheme = "no-guess-dev"
 local_scheme = "node-and-date"

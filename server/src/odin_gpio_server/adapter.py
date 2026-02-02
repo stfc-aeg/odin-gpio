@@ -2,14 +2,14 @@ import logging
 
 from odin.adapters.adapter import ApiAdapter, ApiAdapterResponse
 from odin.adapters.parameter_tree import ParameterTreeError
-from odin_gpio_server.controller import TriggerController, TriggerControllerError
+from odin_gpio_server.controller import GpioServerController, GpioServerControllerError
 from tornado.escape import json_decode
 
-class TriggerAdapter(ApiAdapter):
+class GpioServerAdapter(ApiAdapter):
     def __init__(self, **kwargs):
-        super(TriggerAdapter, self).__init__(**kwargs)
+        super(GpioServerAdapter, self).__init__(**kwargs)
 
-        self.controller = TriggerController()
+        self.controller = GpioServerController()
         logging.debug("Adapter Loaded")
 
     def get_controller(self):
@@ -37,7 +37,7 @@ class TriggerAdapter(ApiAdapter):
             self.controller.set(path, data)
             response = self.controller.get(path)
             status_code = 200
-        except TriggerControllerError as e:
+        except GpioServerControllerError as e:
             response = {"error": str(e)}
             status_code = 400
         except (TypeError, ValueError) as e:

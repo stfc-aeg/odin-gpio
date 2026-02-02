@@ -6,10 +6,10 @@ from zmq.eventloop.zmqstream import ZMQStream
 
 from odin.adapters.parameter_tree import ParameterTree
 
-class TriggerControllerError(Exception):
+class GpioServerControllerError(Exception):
     pass
 
-class TriggerController():
+class GpioServerController():
 
     def __init__(self):
         self.event_callback = None
