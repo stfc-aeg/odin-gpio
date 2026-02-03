@@ -14,7 +14,8 @@ class ClientController:
         self.input_manager = inputManager(input_chip_path, input_line_offset, self.output_manager, self.do_req)
 
         self.param_tree = ParameterTree({
-            'active': (True, None)
+            'active': (True, None),
+            'triggers': (lambda: self.input_manager.times_risen, None),
         })
 
         self.ctrl_endpoint = f"tcp://192.168.0.58:5555"
@@ -27,7 +28,7 @@ class ClientController:
         self.ctrl_socket.connect(self.ctrl_endpoint)
 
         self.ctrl_stream = ZMQStream(self.ctrl_socket)
-        self.ctrl_stream.on_recv(self.output_manager.pulse)
+        # self.ctrl_stream.on_recv(self.output_manager.pulse)
 
     def get(self, path):
         return self.param_tree.get(path)
